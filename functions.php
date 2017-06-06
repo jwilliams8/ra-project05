@@ -19,7 +19,7 @@ function red_starter_setup() {
 	add_theme_support( 'title-tag' );
 
 	// Enable support for Post Thumbnails on posts and pages.
-	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails');
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -90,6 +90,9 @@ function red_starter_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_style( 'fontawesome', 'http:////maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i', false );
 }
 add_action( 'wp_enqueue_scripts', 'red_starter_scripts' );
 
@@ -102,3 +105,48 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
+
+
+// Our custom post type function
+function register_post_type_func($key) {
+	$key_dash = str_ireplace(" ", "-", $key);
+	register_post_type( strtolower($key_dash),
+		array(
+			'labels' => array(
+				'name' => __( ucwords($key)),
+				'singular_name' => __( ucwords($key) )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'rewrite' => array('slug' => strtolower($key_dash)),
+			'supports' => array('title', 'editor', 'author', 'thumbnail')
+		)
+	);
+}
+
+function register_tax_func($item, $key) {
+	$item_dash = str_ireplace(" ", "-", $item);
+	register_taxonomy($item_dash, $key, array(
+		'label'        => __( $item ),
+        'rewrite'      => array( 'slug' => $item_dash ),
+        'hierarchical' => true,
+	));
+}
+
+function create_pt_tax() {
+	$post_type_array = array(
+		"products" => array("Type"),
+		"adventures"
+		);
+		foreach($post_type_array as $key => $value) {
+			if (is_array($value)) {
+				register_post_type_func($key);
+				foreach($value as $item){
+					register_tax_func($item, $key);
+				}
+			} else {
+				register_post_type_func($value);
+			}
+		}	
+}
+add_action( 'init', 'create_pt_tax' );

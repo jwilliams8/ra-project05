@@ -6,10 +6,8 @@
 
 a {
 	color: $color__link;
+	font-family: 'NovecentoSans';
 
-	&:visited {
-		color: $color__link-visited;
-	}
 	&:hover,
 	&:focus,
 	&:active {
@@ -29,8 +27,8 @@ a {
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
-	width: 100%;
+	// float: left;
+	// width: 100%;
 
 	ul {
 		display: none;
@@ -87,6 +85,7 @@ a {
 	a {
 		display: block;
 		text-decoration: none;
+		text-transform: uppercase;
 	}
 
 	.current_page_item > a,
@@ -128,5 +127,24 @@ a {
 		float: right;
 		text-align: right;
 		width: 50%;
+	}
+}
+
+nav {
+	height: 60px;
+	padding: 12px 0;
+}
+nav li {
+	padding-left: 15px;
+}
+
+.banner-show {
+	height: 100vh;
+}
+.banner-hide {
+	background: none;
+	border-bottom: 1px solid #d6d6d6;
+	nav a {
+		color: $color_primary;
 	}
 }

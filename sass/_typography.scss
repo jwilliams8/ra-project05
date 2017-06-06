@@ -2,6 +2,20 @@
 # Typography
 --------------------------------------------------------------*/
 
+@font-face {
+  font-family: 'NovecentoSans';
+  src: url(/ra-project05/wp-content/themes/ra-project05/assets/fonts/Novecento/Novecentosanswide-Normal.ttf);
+  font-weight: normal;
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'NovecentoSans';
+  src: url(/ra-project05/wp-content/themes/ra-project05/assets/fonts/Novecento/Novecentosanswide-DemiBold.ttf);
+  font-weight: 700;
+  font-style: normal; 
+}
+
 body,
 button,
 input,
@@ -13,16 +27,28 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
+label {
+	text-transform: uppercase;
+	font-family: 'NovecentoSans';
+}
 /* Headings */
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	font-family: 'NovecentoSans';
+	font-weight: normal;
+	text-transform: uppercase;
 }
 
 /* Copy */
 
 p {
 	margin-bottom: $base__space-unit;
+	font-family: 'Merriweather', serif;
+}
+
+footer li, footer a {
+	font-family: 'Merriweather', serif;
 }
 
 dfn, cite, em, i {
@@ -65,4 +91,8 @@ mark, ins {
 
 big {
 	font-size: 125%;
+}
+
+h2 {
+	padding: 20px 0;
 }

@@ -38,7 +38,9 @@ ul, ol {
 }
 
 ul {
-	list-style: disc;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
 ol {
@@ -67,4 +69,48 @@ img {
 table {
 	margin: 0 0 $base__space-unit;
 	width: 100%;
+}
+footer {
+	background: url("/ra-project05/wp-content/themes/ra-project05/assets/images/dark-wood@2x.png") center center / cover no-repeat;
+	color: #fff; 
+	img {
+		margin-left: auto;
+	    height: 60px; }
+	li {
+	    font-size: 1.1rem;
+	    padding-bottom: 1.8rem; 
+	}
+	li:last-child {
+	    padding-bottom: 0; 
+	}
+	i {
+	    color: #fff; 
+	}
+	a {
+	    padding-right: .5rem;
+	    text-decoration: none;
+	    color: #fff; 
+	}
+	p {
+	    font-family: NovecentoSans;
+	    text-align: center;
+	    text-transform: uppercase;
+	    font-size: 1.1rem;
+	    padding-bottom: 2rem; 
+	    margin-bottom: 0;
+	}
+	a:hover, footer i:hover {
+	    color: #548683;
+	}
+	h3 {
+		margin-top: 0;
+		font-weight: 700;
+		color: #ce9869;
+		letter-spacing: .5px;
+	}
+}
+
+input, textarea {
+	background-color: #f2f2f2;
+	border-radius: none;
 }

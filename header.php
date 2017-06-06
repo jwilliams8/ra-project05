@@ -4,7 +4,7 @@
  *
  * @package RED_Starter_Theme
  */
-
+$header = new header;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
@@ -19,17 +19,14 @@
 	<body <?php body_class(); ?>>
 		<div id="page" class="hfeed site">
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html( 'Skip to content' ); ?></a>
-
 			<header id="masthead" class="site-header" role="banner">
-				<div class="site-branding">
-					<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-				</div><!-- .site-branding -->
-
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html( 'Primary Menu' ); ?></button>
+			<div class="<?php $header -> banner_class(); ?>" style="<?php $header -> banner_image(); ?>">		
+				<nav id="site-navigation" class="main-navigation flex justify-between align-center page-container" role="navigation">
+					<img src ="<?php $header -> logo_image(); ?>">
+					<button class="menu-toggle" aria-controls="primary-menu" style="color: #fff; padding-left:10px;"aria-expanded="false"><?php esc_html( 'Primary Menu' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
+				</div>
 			</header><!-- #masthead -->
 
 			<div id="content" class="site-content">
