@@ -46,7 +46,7 @@
 		endwhile; 
 	endif;
 	echo "</div>";
-	echo "<a href='#' class='btn-green'>More Adventures</a>";
+	echo "<a href='adventures' class='btn-green'>More Adventures</a>";
 	echo "</div>";
 	echo "</div>";
 ?>

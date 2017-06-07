@@ -73,9 +73,6 @@ table {
 footer {
 	background: url("/ra-project05/wp-content/themes/ra-project05/assets/images/dark-wood@2x.png") center center / cover no-repeat;
 	color: #fff; 
-	img {
-		margin-left: auto;
-	    height: 60px; }
 	li {
 	    font-size: 1.1rem;
 	    padding-bottom: 1.8rem; 
@@ -97,7 +94,7 @@ footer {
 	    text-transform: uppercase;
 	    font-size: 1.1rem;
 	    padding-bottom: 2rem; 
-	    margin-bottom: 0;
+	    margin: 0;
 	}
 	a:hover, footer i:hover {
 	    color: #548683;

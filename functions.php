@@ -61,8 +61,8 @@ function red_starter_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'red_starter_widgets_init' );
@@ -150,3 +150,25 @@ function create_pt_tax() {
 		}	
 }
 add_action( 'init', 'create_pt_tax' );
+
+function theme_slug_widgets_init() {
+    register_sidebar( array(
+        'name' => __( 'Footer Sidebar', 'theme-slug' ),
+        'id' => 'footer-sidebar',
+        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</section>',
+	'before_title'  => '<h3>',
+	'after_title'   => '</h3>',
+    ) );
+    register_sidebar( array(
+        'name' => __( 'Logo Sidebar', 'theme-slug' ),
+        'id' => 'logo-sidebar',
+        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h3>',
+	'after_title'   => '</h3>',
+    ) );
+}
+add_action( 'widgets_init', 'theme_slug_widgets_init' );

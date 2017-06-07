@@ -24,9 +24,7 @@
 .align-space-between {
 	align-items: space-between;
 }
-nav img {
-	height: 100%;
-}
+
 .btn-green {
 	background-color: $color_primary;
 	border: 1px solid $color_primary;
@@ -261,6 +259,9 @@ nav img {
 .lrg-padding-right {
   padding-right: 5rem; 
 }
+.md-padding-left {
+  padding-left: 4rem; 
+}
 .md-padding-right {
  padding-right: 40px;
 }
@@ -310,4 +311,78 @@ nav img {
 	margin: 0 4px 6px;
 
 	flex: 1;
+}
+
+#widget_sp_image-2{
+ 	margin-left: auto;
+ 	img {
+ 		height: 60px;
+ 		width: auto;
+ 	}
+}
+.logo {
+	li {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		img {
+			height: 40px;
+			width: auto;
+		}
+	}
+}
+.green-logo li:nth-child(1) {
+ 	display:none;
+}
+.white-logo li:nth-child(2) {
+    display: none;
+}
+
+/* sidebar styling */
+#secondary {
+	width: 30%;
+	padding: 40px 30px 0 60px;;
+	font-family: 'Merriweather', serif;
+	box-sizing: border-box;
+	h3 {
+		font-weight: 700;
+	}
+	a {
+		color: $color_primary;
+		text-decoration: none;
+		font-family: 'Merriweather', serif;
+
+	}
+	p {
+		margin-bottom: 20px;
+	}
+	i {
+		width: 20px;
+	}
+	aside {
+		margin-bottom: 50px;
+	}
+}
+
+/* about */
+.about {
+	h2 {
+		font-weight: 700;
+		text-align: center;	
+		font-size: 2.5rem;
+	}
+	h2:first-child {
+		margin-top: 20px;
+	}
+	h1 {
+		text-align: center;
+		color: #fff;
+		padding: 0;
+		margin-top: -55%;
+		font-size: 50px;
+	}
+	.page-content {
+		margin-top: 50%;
+	}
+
 }

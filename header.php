@@ -22,7 +22,9 @@ $header = new header;
 			<header id="masthead" class="site-header" role="banner">
 			<div class="<?php $header -> banner_class(); ?>" style="<?php $header -> banner_image(); ?>">		
 				<nav id="site-navigation" class="main-navigation flex justify-between align-center page-container" role="navigation">
-					<img src ="<?php $header -> logo_image(); ?>">
+					<div class="logo <?php $header -> logo_image(); ?>">
+								<?php dynamic_sidebar('logo-sidebar'); ?>
+					</div>
 					<button class="menu-toggle" aria-controls="primary-menu" style="color: #fff; padding-left:10px;"aria-expanded="false"><?php esc_html( 'Primary Menu' ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
