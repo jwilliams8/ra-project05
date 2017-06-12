@@ -33,6 +33,10 @@
 
 /* Fields */
 
+input {
+	padding: 0;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -42,6 +46,7 @@ textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
+	outline: none;
 
 	&:focus {
 		color: #111;
@@ -53,8 +58,16 @@ input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
 }
+
+input[type="submit"]{
+	background-color: $color_primary;
+	border: 1px solid $color_primary;
+	padding: 6px 16px;
+	color: #fff;
+	text-transform: uppercase;
+}
+
 
 textarea {
 	padding-left: 3px;

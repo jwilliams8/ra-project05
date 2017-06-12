@@ -1,32 +1,31 @@
-<?php
-/**
- * The template for displaying all single posts.
- *
- * @package RED_Starter_Theme
- */
+<?php get_header(); ?>
+ 
+<div id="primary" class="content-area">
+	<main id="main" class="site-main flex" role="main"> 
+		<div class="width-70 md-padding-tb border-right-grey md-padding-right">
 
-get_header(); ?>
+ 		<?php
+		while ( have_posts() ) : the_post(); 
+			echo "<div class='single-post-image' style=\"background: url('".get_the_post_thumbnail_url()."') center center / cover no-repeat;\">";
+			echo "<h1>".get_the_title()."</h1>";
+			echo "<h4 class='font-weight-400'>".get_the_date()." / ".get_comments_number()." Comments / By ".get_the_author()."</h4>";
+			echo "</div>";
+			echo "<div class='single-post-content'>";
+			echo get_the_content();
+			echo red_starter_entry_footer();
+			include 'inc/social-links.php';
+			echo "</div>";
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		endwhile; // End of the loop.
+		?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		</div>
+		<?php get_sidebar(); ?>
+	</main>
+</div>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
-
-			<?php the_post_navigation(); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
-		<?php endwhile; // End of the loop. ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

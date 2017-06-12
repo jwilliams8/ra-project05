@@ -13,7 +13,7 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<h4>By <?php the_author(); ?></h4>
+		<h4 class="font-weight-400">By <?php the_author(); ?></h4>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

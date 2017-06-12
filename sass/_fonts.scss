@@ -1,6 +1,26 @@
 /*--------------------------------------------------------------
 # Embedded Fonts
 --------------------------------------------------------------*/
+@font-face {
+  font-family: 'NovecentoSans';
+  src: url(/ra-project05/wp-content/themes/ra-project05/assets/fonts/Novecento/Novecentosanswide-Normal.ttf);
+  font-weight: normal;
+  font-style: normal; 
+}
+
+@font-face {
+  font-family: 'NovecentoSans';
+  src: url(/ra-project05/wp-content/themes/ra-project05/assets/fonts/Novecento/Novecentosanswide-DemiBold.ttf);
+  font-weight: 700;
+  font-style: normal; 
+}
+
 .font-bold {
 	font-weight: 700;
+}
+.font-weight-400 {
+	font-weight: 400;
+}
+.font-center {
+	text-align: center;
 }

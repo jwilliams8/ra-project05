@@ -9,9 +9,10 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<!-- <div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+ -->	<div class="page-container flex">
+ 			<div class="width-70 border-right-grey md-padding-right">
 			<section class="error-404 not-found">
 				<header class="page-header">
 					<h1 class="page-title"><?php echo esc_html( 'Oops! That page can&rsquo;t be found.' ); ?></h1>
@@ -48,8 +49,10 @@ get_header(); ?>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			</div>
+			<?php get_sidebar(); ?>
+			</div>
+	<!-- 	</main>
+	</div> -->
 
 <?php get_footer(); ?>

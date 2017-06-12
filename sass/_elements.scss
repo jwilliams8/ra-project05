@@ -72,7 +72,7 @@ table {
 }
 footer {
 	background: url("/ra-project05/wp-content/themes/ra-project05/assets/images/dark-wood@2x.png") center center / cover no-repeat;
-	color: #fff; 
+	color: #fff;
 	li {
 	    font-size: 1.1rem;
 	    padding-bottom: 1.8rem; 
@@ -85,7 +85,6 @@ footer {
 	}
 	a {
 	    padding-right: .5rem;
-	    text-decoration: none;
 	    color: #fff; 
 	}
 	p {
@@ -101,6 +100,7 @@ footer {
 	}
 	h3 {
 		margin-top: 0;
+		padding-bottom:1rem;
 		font-weight: 700;
 		color: #ce9869;
 		letter-spacing: .5px;

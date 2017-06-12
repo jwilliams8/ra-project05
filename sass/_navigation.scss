@@ -6,6 +6,7 @@
 
 a {
 	color: $color__link;
+	text-decoration: none;
 	font-family: 'NovecentoSans';
 
 	&:hover,
@@ -27,8 +28,6 @@ a {
 .main-navigation {
 	clear: both;
 	display: block;
-	// float: left;
-	// width: 100%;
 
 	ul {
 		display: none;
@@ -135,6 +134,10 @@ nav {
 	padding: 12px 0;
 	.logo {
 		height: 100%;
+		margin-right: auto;
+	}
+	i {
+		color: #fff;
 	}
 }
 nav li {
@@ -143,11 +146,76 @@ nav li {
 
 .banner-show {
 	height: 100vh;
+	a {
+		color: #fff;
+	}
+	a:hover {
+		color: #a0a0a0;
+	}
 }
 .banner-hide {
 	background: none;
 	border-bottom: 1px solid #d6d6d6;
-	nav a {
+	a {
 		color: $color_primary;
 	}
+	a:hover {
+		color: #444444;
+	}
+	i {
+		color: $color_primary;
+	}
+}
+
+#widget_sp_image-2{
+ 	margin-left: auto;
+ 	img {
+ 		height: 60px;
+ 		width: auto;
+ 	}
+}
+.logo {
+	li {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		img {
+			height: 40px;
+			width: auto;
+		}
+	}
+}
+.green-logo li:nth-child(1) {
+ 	display:none;
+}
+.white-logo li:nth-child(2) {
+    display: none;
+}
+
+/* nav search */
+input[type="search"].search-field-hide {
+	width: 0px;
+	height: 35px;
+	background-color: white;
+	border: none;
+	border-radius: 25px;
+	transition: all 0.5s ease;
+	margin: 0;
+}
+input[type="search"].search-field-show {
+	width: 250px;
+	height: 35px;
+	color: #5b5b5b;
+	padding-left: 20px;
+	background-color: white;
+	border: 1px solid #d6d6d6;
+	border-radius: 25px;
+	outline: none;
+	margin: 0 15px;
+	font-size: 1rem;
+	transition: all 0.5s ease;
+}
+fieldset {
+	padding: 0 10px;
+	border: none;
 }

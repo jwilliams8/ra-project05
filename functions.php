@@ -79,22 +79,6 @@ function red_starter_minified_css( $stylesheet_uri, $stylesheet_dir_uri ) {
 }
 add_filter( 'stylesheet_uri', 'red_starter_minified_css', 10, 2 );
 
-/**
- * Enqueue scripts and styles.
- */
-function red_starter_scripts() {
-	wp_enqueue_style( 'red-starter-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'red-starter-skip-link-focus-fix', get_template_directory_uri() . '/build/js/skip-link-focus-fix.min.js', array(), '20130115', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-	wp_enqueue_style( 'fontawesome', 'http:////maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
-	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:300,300i,700,700i', false );
-}
-add_action( 'wp_enqueue_scripts', 'red_starter_scripts' );
 
 /**
  * Custom template tags for this theme.
@@ -106,69 +90,7 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/extras.php';
 
-
-// Our custom post type function
-function register_post_type_func($key) {
-	$key_dash = str_ireplace(" ", "-", $key);
-	register_post_type( strtolower($key_dash),
-		array(
-			'labels' => array(
-				'name' => __( ucwords($key)),
-				'singular_name' => __( ucwords($key) )
-			),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array('slug' => strtolower($key_dash)),
-			'supports' => array('title', 'editor', 'author', 'thumbnail')
-		)
-	);
-}
-
-function register_tax_func($item, $key) {
-	$item_dash = str_ireplace(" ", "-", $item);
-	register_taxonomy($item_dash, $key, array(
-		'label'        => __( $item ),
-        'rewrite'      => array( 'slug' => $item_dash ),
-        'hierarchical' => true,
-	));
-}
-
-function create_pt_tax() {
-	$post_type_array = array(
-		"products" => array("Type"),
-		"adventures"
-		);
-		foreach($post_type_array as $key => $value) {
-			if (is_array($value)) {
-				register_post_type_func($key);
-				foreach($value as $item){
-					register_tax_func($item, $key);
-				}
-			} else {
-				register_post_type_func($value);
-			}
-		}	
-}
-add_action( 'init', 'create_pt_tax' );
-
-function theme_slug_widgets_init() {
-    register_sidebar( array(
-        'name' => __( 'Footer Sidebar', 'theme-slug' ),
-        'id' => 'footer-sidebar',
-        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</section>',
-	'before_title'  => '<h3>',
-	'after_title'   => '</h3>',
-    ) );
-    register_sidebar( array(
-        'name' => __( 'Logo Sidebar', 'theme-slug' ),
-        'id' => 'logo-sidebar',
-        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h3>',
-	'after_title'   => '</h3>',
-    ) );
-}
-add_action( 'widgets_init', 'theme_slug_widgets_init' );
+require ('inc/enqueues.php');
+require ('inc/custom_sidebars.php');
+require ('inc/post_type_tax.php');
+require ('inc/hooks.php');

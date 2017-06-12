@@ -1,0 +1,120 @@
+.site-container {
+	width: 84%;
+	margin: 0 auto;
+}
+
+/* Flex Classes */
+.flex { 
+	display: flex;
+}
+.flex-end {
+	justify-content: flex-end;
+}
+.flex-col {
+	flex-direction: column;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
+.justify-between {
+	justify-content: space-between;
+}
+.align-center {
+	align-items: center;
+}
+.justify-space-between {
+	justify-content: space-between;
+}
+.align-space-between {
+	align-items: space-between;
+}
+
+/* Widths */
+.width-50-container {
+	width: 50%;
+	box-sizing: border-box;
+}
+.width-50-container:nth-child(odd) {
+	padding-right: 10px;
+}
+.width-50-container:nth-child(even) {
+	padding-left: 10px;
+}
+.width-70 {
+	width: 70%;
+}
+.width-80 {
+	width: 80%;
+}
+
+/* Padding & Margins */
+
+.lrg-padding-tb {
+	padding: 5rem 0; 
+}
+.md-padding-tb {
+	padding: 3rem 0; 
+}
+.sm-padding-tb {
+	padding: 1rem 0;
+}
+.lrg-padding-right {
+	padding-right: 5rem; 
+}
+.md-padding-left {
+	padding-left: 4rem; 
+}
+.md-padding-right {
+	padding-right: 40px;
+}
+.md-padding-bottom {
+	padding-bottom: 40px;
+}
+.sm-padding-bottom {
+	padding-bottom: 20px;
+}
+.margin-auto {
+	margin: 0 auto;
+}
+
+/* button styling */
+
+.btn {
+	padding: 8px 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.btn-green {
+	background-color: $color_primary;
+	border: 1px solid $color_primary;
+	color: #fff;
+}
+.btn-green:hover {
+	color: $color_primary;
+	background-color: #fff;
+	border: 1px solid $color_primary;
+}
+.btn-black {
+	border: 1px solid #000;
+	color: #000;
+}
+.btn-black:hover {
+	color: #fff;
+	background-color: #000;
+	border: 1px solid #000;
+}
+.btn-white {
+	border: 1px solid #fff;
+	color: #fff;
+	
+}
+.btn-white:hover {
+	color: #000;
+	background-color: #fff;
+	border: 1px solid #fff;
+}
+
+.social-links {
+	padding: 30px 0;
+}

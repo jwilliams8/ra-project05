@@ -20,5 +20,7 @@
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
+		<a href="<?php echo get_permalink() ?>" class="btn btn-black">Read More <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+</a>
 	</div><!-- .entry-summary -->
 </article><!-- #post-## -->
