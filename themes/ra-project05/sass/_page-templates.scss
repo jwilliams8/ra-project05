@@ -121,6 +121,7 @@
 		line-height: 1.2;
 		text-align: initial;
 		font-family: $primary_serif;
+		padding: 3rem 0;
 	}
 }
 
@@ -236,6 +237,12 @@
 	}
 	aside {
 		margin-bottom: 50px;
+	}
+	ul {
+		padding-top: 20px;
+	}
+	li {
+		padding-bottom: 5px;
 	}
 }
 

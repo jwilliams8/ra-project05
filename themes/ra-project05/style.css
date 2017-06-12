@@ -1002,7 +1002,8 @@ object {
     letter-spacing: .5px;
     line-height: 1.2;
     text-align: initial;
-    font-family: "Merriweather", serif; }
+    font-family: "Merriweather", serif;
+    padding: 3rem 0; }
 
 /* Single Adventure Page */
 .single-adventure h1 {
@@ -1089,6 +1090,10 @@ object {
     width: 20px; }
   #secondary aside {
     margin-bottom: 50px; }
+  #secondary ul {
+    padding-top: 20px; }
+  #secondary li {
+    padding-bottom: 5px; }
 
 /* Page without Sidebar */
 .page-no-sidebar {
